@@ -1,6 +1,7 @@
 "use server"
 
 import nodemailer from 'nodemailer';
+import mailFromWebsite from '../mail-template/mailFromWebsite';
 
 export type FormState = {
   res: string,
@@ -28,7 +29,7 @@ export async function sendMail(prevState: FormState, formData: FormData) {
       to: process.env.GMAIL_FROM, // list of receivers
       subject: `Message from website`, // Subject line
       text: message as string, // plain text body
-      /* html: emailHtml */ // html body
+      html: mailFromWebsite(from as string, message as string) // html body
     })
     return { res: 'OK', message: `✅ Messaggio inviato correttamente.\nAppena possibile risponderemo all'indirizzo email: ${from}` }
   } catch (err) {
