@@ -30,7 +30,7 @@ const FormBody = () => {
                             autoComplete="email"
                             required
                             disabled={pending}
-                            className="block bg-black w-full py-1.5 border-0 text-white shadow-sm ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-lime-300 sm:text-sm sm:leading-6"
+                            className="block border-0 bg-black w-full py-1.5 text-white shadow-sm ring-0 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-lime-300 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>

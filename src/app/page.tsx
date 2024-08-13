@@ -22,9 +22,9 @@ export default async function Home() {
 
       </div>
 
-      <div id="technologies" className="">
-        <h3 className={`text-2xl uppercase p-4 font-bold ${orbitron.className}`}>Technology I Use</h3>
-        <ul>
+      <div id="technologies" className="grid md:grid-cols-2 items-center">
+        <h3 className={`text-2xl uppercase p-4 text-center font-bold ${orbitron.className}`}>Technology I 💚</h3>
+        <ul className="font-semibold">
           {[
             {name: 'Html', color: 'pink-600'},
             {name: 'CSS', color: 'orange-500'},
@@ -48,7 +48,10 @@ export default async function Home() {
           </ul>
       </div>
 
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 bg-black">
+        <p className="text-2xl uppercase py-4">
+          Contact me
+        </p>
         <ContactForm />
       </div>
       
