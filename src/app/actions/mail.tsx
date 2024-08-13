@@ -30,7 +30,7 @@ export async function sendMail(prevState: FormState, formData: FormData) {
       text: message as string, // plain text body
       /* html: emailHtml */ // html body
     })
-    return { res: 'OK', message: 'Grazie per aver inviato il messaggio' }
+    return { res: 'OK', message: `✅ Messaggio inviato correttamente.\nAppena possibile risponderemo all'indirizzo email: ${from}` }
   } catch (err) {
     console.log(err)
     return { res: 'Error', message: "Errore durante l'invio riprovare" }

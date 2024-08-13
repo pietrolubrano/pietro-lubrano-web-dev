@@ -22,29 +22,33 @@ export default async function Home() {
 
       </div>
 
-      <div id="technologies" className="h-[calc(100lvh)] p-4 grid gap-4 md:grid-cols-4">
-
+      <div id="technologies" className="">
+        <h3 className={`text-2xl uppercase p-4 font-bold ${orbitron.className}`}>Technology I Use</h3>
+        <ul>
           {[
-            {name: 'CSS', bgColor: 'bg-orange-500'},
-            {name: 'Javascript', bgColor: 'bg-yellow-500'},
-            {name: 'Typescript', bgColor: 'bg-blue-800'},
-            {name: 'React', bgColor: 'bg-cyan-500'},
-            {name: 'Next.js', bgColor: 'bg-black'},
-            {name: 'node.js', bgColor: 'bg-green-600'},
-            {name: 'Postgress SQL', bgColor: 'bg-gray-400'}
-          ].map(technology => <button key={technology.name}
-            className={`text-2xl rounded-xl uppercase font-bold ${orbitron.className} ${technology.bgColor}`}
+            {name: 'Html', color: 'pink-600'},
+            {name: 'CSS', color: 'orange-500'},
+            {name: 'Javascript', color: 'yellow-500'},
+            {name: 'Typescript', color: 'blue-800'},
+            {name: 'React', color: 'cyan-500'},
+            {name: 'Next.js', color: 'black'},
+            {name: 'node.js', color: 'green-600'},
+            {name: 'Postgress SQL', color: 'gray-400'}
+          ].map(technology => <li key={technology.name}
+            className={`text-xl ps-5 uppercase ${orbitron.className} p-2 bg-gradient-to-r from-${technology.color} to-black`}
             >
             {technology.name}
-          </button>)}
-          <button 
+          </li>)}
+          {/* <li 
             className={`flex items-center justify-center  text-2xl rounded-2xl uppercase font-bold ${orbitron.className}`}
             >
             <ArrowDownIcon className="h-8 w-8 md:h-16 md:w-16 animate-bounce hover:text-lime-500" />
-          </button>
+          </li> */}
+
+          </ul>
       </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto p-4">
         <ContactForm />
       </div>
       

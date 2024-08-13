@@ -17,6 +17,16 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/forms')
+  ],
+  safelist: [
+    'from-pink-600',
+    'from-orange-500',
+    'from-yellow-500',
+    'from-blue-800',
+    'from-cyan-500',
+    'from-black',
+    'from-green-600',
+    'from-gray-400'
   ]
 };
 export default config;
