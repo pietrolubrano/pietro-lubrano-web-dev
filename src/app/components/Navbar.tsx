@@ -1,7 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, ArrowRightEndOnRectangleIcon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { config } from '../../../lib/auth'
+
 import nextAuth, { getServerSession } from 'next-auth'
 
 import Image from 'next/image'
@@ -24,7 +24,7 @@ function classNames(...classes: string[]) {
 
 export default async function Navbar() {
 
-  const session = await getServerSession(config)
+  const session = await getServerSession()
   /* const csrfToken = await getCsrfToken() */
 
   console.log(session)
@@ -115,9 +115,7 @@ export default async function Navbar() {
                     Your Profile
                   </a>
                 </MenuItem>
-                <MenuItem>
-                  <SignOutButton />
-                </MenuItem>
+                <SignOutButton />
               </MenuItems>
             </Menu>
           </div>

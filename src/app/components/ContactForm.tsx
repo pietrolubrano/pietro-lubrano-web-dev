@@ -31,7 +31,9 @@ const FormBody = () => {
                             id="from"
                             name="from"
                             type="email"
+                            placeholder="paolorossi@gmail.com"
                             autoComplete="email"
+                            required
                             disabled={pending}
                             className="block bg-black w-full py-1.5 border-0 text-white shadow-sm ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-lime-300 sm:text-sm sm:leading-6"
                             />
@@ -47,12 +49,14 @@ const FormBody = () => {
                             id="message"
                             name="message"
                             rows={3}
+                            placeholder="Scrivi qui il tuo messaggio."
+                            required
                             disabled={pending}
                             className="block bg-black text-white w-full border-0 py-1.5 shadow-sm ring-0 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-lime-300 sm:text-sm sm:leading-6"
                             defaultValue={''}
                             />
                         </div>
-                        <p className="mt-3 text-sm leading-6 text-white">Write a few sentences about yourself.</p>
+                        {/* <p className="mt-3 text-sm leading-6 text-white">Scrivi qui il tuo messaggio.</p> */}
                     </div>
                 </div>
             </div>
