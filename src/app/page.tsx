@@ -1,11 +1,11 @@
 import { Orbitron } from "next/font/google";
-import { ArrowDownCircleIcon, ArrowDownIcon } from "@heroicons/react/24/outline";
+import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const orbitron = Orbitron({ subsets: ["latin"]})
 
-export default function Home() {  
-  
+export default async function Home() {
+
   return (
     <main className="min-h-full w-full">
       
@@ -18,10 +18,10 @@ export default function Home() {
         <Link href={"#technologies"} className="absolute bottom-8 animate-bounce hover:text-lime-400">
             <ArrowDownIcon className="h-8 w-8" />
         </Link>
-        
+
       </div>
 
-      <div id="technologies" className="h-[calc(100dvh)] p-4 grid gap-4 md:grid-cols-4">
+      <div id="technologies" className="h-[calc(100lvh)] p-4 grid gap-4 md:grid-cols-4">
 
           {[
             {name: 'CSS', bgColor: 'bg-orange-500'},

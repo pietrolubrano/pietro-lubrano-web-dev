@@ -15,8 +15,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en">
+    <html lang="it">
       <body className={inter.className}>
         <Navbar></Navbar>
         {children}
