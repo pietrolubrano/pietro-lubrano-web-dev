@@ -1,6 +1,7 @@
 import { Orbitron } from "next/font/google";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import ContactForm from "./components/ContactForm";
 
 const orbitron = Orbitron({ subsets: ["latin"]})
 
@@ -42,6 +43,12 @@ export default async function Home() {
             <ArrowDownIcon className="h-8 w-8 md:h-16 md:w-16 animate-bounce hover:text-lime-500" />
           </button>
       </div>
+
+      <div className="container mx-auto">
+        <ContactForm />
+      </div>
+      
+
     </main>
   );
 }
