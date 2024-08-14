@@ -1,9 +1,8 @@
-import { Orbitron } from "next/font/google";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import ContactForm from "./components/ContactForm";
 
-const orbitron = Orbitron({ subsets: ["latin"]})
+import { orbitron } from "./layout";
 
 export default async function Home() {
 
@@ -22,7 +21,7 @@ export default async function Home() {
 
       </div>
 
-      <div id="technologies" className="grid md:grid-cols-2 items-center">
+      <div id="technologies" className="grid md:grid-cols-2 items-center mb-4">
         <h3 className={`text-2xl uppercase p-4 text-center font-bold ${orbitron.className}`}>Technology I 💚</h3>
         <ul className="font-semibold">
           {[
@@ -49,7 +48,7 @@ export default async function Home() {
       </div>
 
       <div className="container mx-auto p-4 bg-black">
-        <p className="text-2xl uppercase py-4">
+        <p className={`${orbitron.className} text-2xl font-semibold uppercase py-4"`}>
           Contact me
         </p>
         <ContactForm />

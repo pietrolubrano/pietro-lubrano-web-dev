@@ -30,7 +30,7 @@ export default function mailFromWebsite(from: string, text: string) {
       </head>
       <body>
         <main>
-          <h3>Dall'utente: <strong>${from}</strong></h3>
+          <h3>Da: <strong>${from}</strong></h3>
           <h3>Corpo del messaggio:</h3>
           <p>${text}</p>
         </main>
