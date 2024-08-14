@@ -1,8 +1,9 @@
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import ContactForm from "./components/ContactForm";
+import { Orbitron } from "next/font/google";
 
-import { orbitron } from "./layout";
+const orbitron = Orbitron({ subsets: ["latin"]})
 
 export default async function Home() {
 

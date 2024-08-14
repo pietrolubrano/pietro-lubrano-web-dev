@@ -3,7 +3,10 @@
 import { useFormState, useFormStatus } from "react-dom";
 import { sendMail } from "../actions/mail";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
-import { orbitron } from "../layout";
+
+import { Orbitron } from "next/font/google";
+
+const orbitron = Orbitron({ subsets: ["latin"]})
 
 const FormBody = () => {
 
