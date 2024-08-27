@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DrinkCard from "./DrinkCard";
 import { Drink } from "../drink-type";
 
@@ -9,31 +9,27 @@ export default function List() {
     const [inputValue, setInputValue] = useState('')
     const [data, setData] = useState<Drink[] | null>(null)
 
-    useEffect(() => {
-        if(inputValue.length === 1){
-            getCocktailsByFirstLetter()
-        } else {
-            searchCocktailByName()
-        }
-    },[inputValue])
-
-    const getCocktailsByFirstLetter = async () => {
-        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${inputValue}`)
+    const getCocktailsByFirstLetter = async (value: string) => {
+        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${value}`)
         const jsonResponse = await response.json();
         setData(jsonResponse.drinks)
     }
 
-    const searchCocktailByName = async () => {
-        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`)
+    const searchCocktailByName = async (value: string) => {
+        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${value}`)
         const jsonResponse = await response.json();
         setData(jsonResponse.drinks)
     }
 
     const handleInputChange = (value: string) => {
         setInputValue(value)
+        if(value.length === 1){
+            getCocktailsByFirstLetter(value)
+        } else {
+            searchCocktailByName(value)
+        }
     }
 
-    console.log(data)
     return (<>
         <div className="mb-4">
             <label htmlFor="search" className={`block text-sm font-medium leading-6 text-white"`}>

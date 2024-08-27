@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className='container mx-auto'>
+    <main className='container mx-auto px-4'>
         <List/>
     </main>
   )
