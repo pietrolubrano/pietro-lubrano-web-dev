@@ -2,7 +2,9 @@ import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import ContactForm from "./components/ContactForm";
 import { Orbitron } from "next/font/google";
-import TodoList from "./components/TodoList";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { tools } from "./tools/list";
 
 const orbitron = Orbitron({ subsets: ["latin"]})
 
@@ -49,16 +51,23 @@ export default async function Home() {
           </ul>
       </div>
       
-      <div className={`container mx-auto p-4 bg-black `}>
+      <div id="tools" className={`container mx-auto p-4 bg-black `}>
+
         <h4 className={`"text-2xl font-semibold mb-4 ${orbitron.className}`}>
           Some amazing tools i made for you
         </h4>
-        <div className="">
-          <h5>
-            Todo List - (use cookies)
-          </h5>
-          <TodoList></TodoList>
+
+        <div>
+          {
+            tools.map(({name, uri, icon}) =>
+              <Link key={name} href={uri} className="inline-flex items-center p-4">
+                <FontAwesomeIcon icon={icon} className="me-2" size="2x" />
+                {name}
+              </Link>
+            )
+          }
         </div>
+
       </div>
 
       <div className="container mx-auto p-4 bg-black">

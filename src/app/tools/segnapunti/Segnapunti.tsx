@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react"
 import Loader from "./components/Loader"
 import TableRow from "./components/TableRow"
+import { Metadata } from "next"
 
 export type PartitaData = number | undefined
 
-export default function Page() {
+export default function Segnapunti() {
     const [playersNames, setPlayersNames] = useState<string[]>([])
     const [partita, setPartita] = useState<[PartitaData[]]>([[]])
     const [start, setStart] = useState<boolean | 'loading' >('loading')

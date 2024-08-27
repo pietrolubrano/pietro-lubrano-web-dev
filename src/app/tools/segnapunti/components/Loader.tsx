@@ -64,10 +64,10 @@ return(
                 </button>
             }
             
-        </div>
+            </div>
         
-    </div>
-)
+        </div>
+    )
 }
 
 export default Loader

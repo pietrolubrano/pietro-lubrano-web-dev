@@ -57,8 +57,8 @@ export default function TodoList() {
     return (
         <ul className="p-4 space-y-2">
             {
-                todos.map(todo => <li key={todo.id}>
-                    <button className="hover:text-lime-400" onClick={() => toggleTodo(todo.id)}>
+                todos.map(todo => <li key={todo.id} className="flex">
+                    <button className="hover:text-lime-400 w-full text-left inline" onClick={() => toggleTodo(todo.id)}>
                         {
                             todo.done ? 
                             `✅ ${todo.text}`
@@ -66,7 +66,7 @@ export default function TodoList() {
                             <span className="">▢ {todo.text}</span>
                         }
                     </button>
-                    <button className="float-end px-3 hover:text-lime-400" onClick={() => deleteTodo(todo.id)}>
+                    <button className="float-end inline px-3 hover:text-red-400" onClick={() => deleteTodo(todo.id)}>
                         <TrashIcon className="size-4 " />
                     </button>
                 </li>)

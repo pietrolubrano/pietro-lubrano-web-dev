@@ -1,4 +1,4 @@
-import { PartitaData } from "../page";
+import { PartitaData } from "../Segnapunti";
 
 interface IRow {
     index: number,
@@ -44,7 +44,6 @@ const TableData = (props: ITableData) => {
                 className="text-center inline border-0 border-white w-full bg-black py-1.5 text-white shadow-sm ring-0 ring-inset ring-gray-300 placeholder:text-gray-400 focus:border-b-2 focus:ring-0 focus:ring-inset focus:border-lime-300 sm:text-sm sm:leading-6"
                 value={value !== undefined ? value : ''}
                 onChange={(e) => handleChange(e.target.value)}
-                onFocus={(e) => e.target.select()}
                 onBlur={(e) => handleBlur(e.target.value)}
             />
         </td>
