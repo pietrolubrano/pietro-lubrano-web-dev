@@ -16,7 +16,24 @@ export default async function Page({
     params: { id: string }
 }) {
 
-    const numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    const keys: (keyof Drink)[] = [
+        'strMeasure1',
+        'strMeasure2',
+        'strMeasure3',
+        'strMeasure4',
+        'strMeasure5',
+        'strMeasure6',
+        'strMeasure7',
+        'strMeasure8',
+        'strMeasure9',
+        'strMeasure10',
+        'strMeasure11',
+        'strMeasure12',
+        'strMeasure13',
+        'strMeasure14',
+        'strMeasure15'
+    ]
+
     const drink = await cocktailById(params.id)
 
     console.log(drink)
@@ -30,9 +47,9 @@ export default async function Page({
             <table className="w-full sm:w-fit p-4 ms-2">
                 <tbody className="">
                 {
-                    numbers.map(number => drink[`strMeasure${number}`] && <tr key={number}>
-                        <td className="text-right px-2">{drink[`strMeasure${number}`]}</td>
-                        <td className="px-2">{drink[`strIngredient${number}`]}</td>
+                    keys.map(key => drink[key] && <tr key={key}>
+                            <td className="text-right px-2">{drink[key]}</td>
+                            <td className="px-2">{drink[key]}</td>
                         </tr>)
                 }
                 </tbody>
