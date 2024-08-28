@@ -36,15 +36,14 @@ export default async function Page({
 
     const drink = await cocktailById(params.id)
 
-    console.log(drink)
     return (
         <div className="container mx-auto bg-black">
-            <Image className="float-right w-full sm:w-fit" priority width={300} height={300} src={drink.strDrinkThumb as string} alt={drink.strDrink} />
+            <Image className="md:float-right w-full sm:w-fit" priority width={400} height={400} src={drink.strDrinkThumb as string} alt={drink.strDrink} />
             <h2 className="text-2xl uppercase font-mono p-4">
                 {drink.strDrink}
             </h2>
             
-            <table className="w-full sm:w-fit p-4 ms-2">
+            <table className="w-full sm:w-fit p-4">
                 <tbody className="">
                 {
                     keys.map(key => drink[key[0]] && <tr key={key[0]}>
