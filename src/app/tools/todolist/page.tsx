@@ -8,6 +8,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <TodoList />
+    <main className="container mx-auto flex justify-center bg-black">
+      <TodoList />
+    </main>
   )
 }
