@@ -1,8 +1,7 @@
 import React from "react"
 import { Drink } from "../drink-type"
 import Image from "next/image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGlasses, faGlassMartini, faGlassMartiniAlt, faGlassWhiskey } from "@fortawesome/free-solid-svg-icons"
+
 
 const cocktailById = async (id: string) => {
     const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -38,7 +37,7 @@ export default async function Page({
 
     return (
         <div className="container mx-auto bg-black">
-            <Image className="md:float-right w-full sm:w-fit" priority width={400} height={400} src={drink.strDrinkThumb as string} alt={drink.strDrink} />
+            <Image className="sm:float-right w-full sm:w-fit" priority width={400} height={400} src={drink.strDrinkThumb as string} alt={drink.strDrink} />
             <h2 className="text-2xl uppercase font-mono p-4">
                 {drink.strDrink}
             </h2>
